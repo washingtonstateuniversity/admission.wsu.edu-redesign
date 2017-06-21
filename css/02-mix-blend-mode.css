@@ -1,0 +1,12 @@
+.multiply {
+	position: relative;
+}
+
+#binder .multiply:before {
+	content: "";
+	height: 100%;
+	mix-blend-mode: multiply;
+	position: absolute;
+	visibility: visible;
+	width: 100%;
+}

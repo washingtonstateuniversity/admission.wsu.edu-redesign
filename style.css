@@ -40,4 +40,17 @@
 		url(webfonts/314122_0_0.woff) format(woff),
 		url(webfonts/314122_0_0.ttf) format(truetype);
 }
+
+.multiply {
+	position: relative;
+}
+
+#binder .multiply:before {
+	content: "";
+	height: 100%;
+	mix-blend-mode: multiply;
+	position: absolute;
+	visibility: visible;
+	width: 100%;
+}
 /*# sourceMappingURL=style.css.map */
