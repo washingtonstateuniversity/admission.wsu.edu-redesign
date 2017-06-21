@@ -7,7 +7,7 @@ class WSUWP_Web_Template {
 	/**
 	 * @var string The desired text to be prepended to the html TITLE element.
 	 */
-	var $html_title = 'Admissions';
+	public $html_title = 'Admissions';
 
 	/**
 	 * Add hooks.
@@ -29,9 +29,9 @@ class WSUWP_Web_Template {
 	 * @return array Modified list of nav menu classes.
 	 */
 	public function modify_current_nav_item( $classes ) {
-		if ( $this->is_template_request() && in_array( 'template-current-nav', $classes ) ) {
+		if ( $this->is_template_request() && in_array( 'template-current-nav', $classes, true ) ) {
 			return array( 'current-menu-item' );
-		} elseif ( $this->is_template_request() && ( in_array( 'current-menu-item', $classes ) || in_array( 'current_page_parent', $classes ) ) ) {
+		} elseif ( $this->is_template_request() && ( in_array( 'current-menu-item', $classes, true ) || in_array( 'current_page_parent', $classes, true ) ) ) {
 			return array();
 		}
 
@@ -69,8 +69,8 @@ class WSUWP_Web_Template {
 		global $wp_query;
 
 		if ( $this->is_template_request() ) {
-			if ( isset( $_GET['html_title'] ) ) {
-				$this->html_title = $_GET['html_title'];
+			if ( isset( $_GET['html_title'] ) ) { // @codingStandardsIgnoreLine
+				$this->html_title = $_GET['html_title']; // @codingStandardsIgnoreLine
 			}
 
 			add_filter( 'spine_get_title', array( $this, 'set_html_title' ) );
@@ -80,10 +80,13 @@ class WSUWP_Web_Template {
 
 			status_header( 200 );
 			$wp_query->is_404 = false;
-			header('HTTP/1.1 200 OK');
-			header('Content-Type: application/json');
-			echo json_encode( array( 'before_content' => $pre, 'after_content' => $post ) );
-			die(0);
+			header( 'HTTP/1.1 200 OK' );
+			header( 'Content-Type: application/json' );
+			echo wp_json_encode( array(
+				'before_content' => $pre,
+				'after_content' => $post,
+			) );
+			die( 0 );
 		}
 	}
 
@@ -95,13 +98,13 @@ class WSUWP_Web_Template {
 	private function build_pre_content() {
 		ob_start();
 
-		$site_name      = get_bloginfo('name');
-		$site_tagline   = get_bloginfo('description');
-		
+		$site_name      = get_bloginfo( 'name' );
+		$site_tagline   = get_bloginfo( 'description' );
+
 		get_header();
 		?>
 		<main class="app-web-template">
-		
+
 		<header class="main-header">
 			<div class="header-group hgroup guttered padded-bottom short">
 				<sup class="sup-header"><a href="<?php home_url(); ?>" title="<?php echo esc_attr( $site_name ); ?>" rel="home"><?php echo esc_attr( $site_name ); ?></a></sup>
