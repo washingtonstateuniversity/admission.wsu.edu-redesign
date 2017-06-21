@@ -7,7 +7,7 @@ class WSU_Admission_Theme {
 	/**
 	 * @var string The version of the WSU Admission theme for cache breaking.
 	 */
-	var $version = '1.3.12';
+	var $version = '0.0.1';
 
 	public function __construct() {
 		add_filter( 'theme_page_templates', array( $this, 'prune_page_templates' ) );
