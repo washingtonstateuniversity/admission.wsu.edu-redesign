@@ -1,2 +1,4 @@
-# admission.wsu.edu
-Child theme for admission.wsu.edu
+admission.wsu.edu Redesign
+===============================
+
+A Spine child theme for admission.wsu.edu.
