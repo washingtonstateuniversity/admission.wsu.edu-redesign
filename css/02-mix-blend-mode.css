@@ -1,12 +1,23 @@
-.multiply {
+.multiply,
+.heromask-gradient {
 	position: relative;
 }
 
-#binder .multiply:before {
+#binder .multiply:before,
+#binder .heromask-gradient:before {
 	content: "";
 	height: 100%;
 	mix-blend-mode: multiply;
 	position: absolute;
 	visibility: visible;
 	width: 100%;
+}
+
+/* Temporary */
+#binder .heromask-gradient {
+	background: none;
+}
+
+.heromask-gradient:before {
+	background: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 0) 50%);
 }
