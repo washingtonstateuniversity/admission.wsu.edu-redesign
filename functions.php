@@ -10,10 +10,18 @@ class WSU_Admission_Theme {
 	public $version = '0.0.1';
 
 	public function __construct() {
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_filter( 'theme_page_templates', array( $this, 'prune_page_templates' ) );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'allow_download_attribute' ), 10 );
 		add_action( 'wp_footer', array( $this, 'carnegie_tracking_tags' ), 101 );
 		add_action( 'wp_footer', array( $this, 'chegg_conversion_pixels' ), 102 );
+	}
+
+	/**
+	 * Enqueue scripts.
+	 */
+	public function enqueue_scripts() {
+		wp_enqueue_script( 'feature-parallax', get_stylesheet_directory_uri() . '/js/feature-parallax.min.js', array( 'jquery' ), $this->version, true );
 	}
 
 	public function prune_page_templates( $templates ) {
