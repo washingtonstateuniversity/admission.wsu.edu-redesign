@@ -87,7 +87,10 @@ module.exports = function( grunt ) {
 				cwd: "src/js/",
 				src: "*.js",
 				dest: "js/",
-				expand: true
+				expand: true,
+				rename: function( dst, src ) {
+					return dst + "/" + src.replace( ".js", ".min.js" );
+				}
 			}
 		},
 
