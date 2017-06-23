@@ -23,6 +23,7 @@ class WSU_Admission_Theme {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'feature-parallax', get_stylesheet_directory_uri() . '/js/feature-parallax.min.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( 'calculators', get_stylesheet_directory_uri() . '/js/calculators.min.js', array( 'jquery' ), $this->version, true );
 	}
 
 	public function prune_page_templates( $templates ) {
