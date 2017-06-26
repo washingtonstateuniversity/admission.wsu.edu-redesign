@@ -13,6 +13,12 @@
 	width: 100%;
 }
 
+.featured.sm.crmbar:after,
+.box1:after,
+.box4:after {
+	mix-blend-mode: multiply;
+}
+
 /* Temporary */
 #binder .heromask-gradient {
 	background: none;

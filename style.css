@@ -56,6 +56,12 @@
 	width: 100%;
 }
 
+.featured.sm.crmbar:after,
+.box1:after,
+.box4:after {
+	mix-blend-mode: multiply;
+}
+
 /* Temporary */
 #binder .heromask-gradient {
 	background: none;
@@ -63,5 +69,49 @@
 
 .heromask-gradient:before {
 	background: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 0) 50%);
+}
+
+.home .lazy-text-scroll li {
+	position: relative;
+}
+
+.home .lazy-text-scroll li:first-of-type {
+	-webkit-transform: translateY(80px);
+	    -ms-transform: translateY(80px);
+	        transform: translateY(80px);
+}
+
+.home .lazy-text-scroll li:nth-of-type(2) {
+	margin-left: 20px;
+	-webkit-transform: translateY(70px);
+	    -ms-transform: translateY(70px);
+	        transform: translateY(70px);
+}
+
+.home .lazy-text-scroll li:last-of-type {
+	margin-left: -20px;
+	-webkit-transform: translateY(50px);
+	    -ms-transform: translateY(50px);
+	        transform: translateY(50px);
+}
+
+/* Buttons */
+.home .announcements div {
+	overflow: hidden;
+}
+
+.home .announcements .slide-up {
+	-webkit-transform: translateY(65px);
+	    -ms-transform: translateY(65px);
+	        transform: translateY(65px);
+	transition: -webkit-transform .5s ease;
+	transition: transform .5s ease;
+	transition: transform .5s ease, -webkit-transform .5s ease;
+}
+
+.home .announcements .slide-up.animate {
+	-webkit-transform: translateY(0);
+	    -ms-transform: translateY(0);
+	        transform: translateY(0);
 }
 /*# sourceMappingURL=style.css.map */
