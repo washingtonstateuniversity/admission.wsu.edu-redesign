@@ -3,6 +3,9 @@
 // Provide support for the /web-template/ JSON endpoint.
 include_once( 'includes/web-template.php' );
 
+// Include the information form shortcode.
+include_once( 'includes/info-form.php' );
+
 class WSU_Admission_Theme {
 	/**
 	 * @var string The version of the WSU Admission theme for cache breaking.
