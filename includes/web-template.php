@@ -112,6 +112,40 @@ class WSUWP_Web_Template {
 			</div>
 		</header>
 
+		<section class="row single">
+
+			<div class="column one">
+
+				<div class="globalbar"></div>
+
+				<div class="pillar">
+					<a href="https://admission.wsu.edu/"></a>
+				</div>
+
+				<div class="hashtag">
+					<a href="https://tagboard.com/futurecougs/search">#FutureCougs</a>
+				</div>
+
+			</div>
+
+		</section>
+
+		<div class="section-wrapper header-background">
+
+			<section class="row single gutter pad-top pad-bottom featured md heromask-gradient">
+
+				<div class="column one">
+
+					<div class="flexwrap">
+						<h1>Page Not Found</h1>
+					</div>
+
+				</div>
+
+			</section>
+
+		</div>
+
 		<?php
 		$content = ob_get_contents();
 		ob_end_clean();
