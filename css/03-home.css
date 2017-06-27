@@ -17,15 +17,15 @@
 }
 
 /* Buttons */
-.home .announcements div {
+.home .announcements {
 	overflow: hidden;
 }
 
 .home .announcements .slide-up {
-	transform: translateY(65px);
-	transition: transform .5s ease;
+	position: relative;
 }
 
-.home .announcements .slide-up.animate {
-	transform: translateY(0);
+.home .announcements .slide-up p {
+	opacity: 0;
+	transition: opacity .5s ease .1s;
 }
