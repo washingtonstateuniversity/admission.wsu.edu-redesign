@@ -164,8 +164,7 @@ class WSUWP_New_JSON_Web_Template {
 
 		get_template_part( 'web-template-pre', $post_slug );
 
-		$content = ob_get_contents();
-		ob_end_clean();
+		$content = ob_get_clean();
 
 		return $content;
 	}
@@ -181,8 +180,7 @@ class WSUWP_New_JSON_Web_Template {
 		get_template_part( 'web-template-post', $post_slug );
 		get_footer();
 
-		$content = ob_get_contents();
-		ob_end_clean();
+		$content = ob_get_clean();
 
 		return $content;
 	}
