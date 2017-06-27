@@ -3,6 +3,9 @@
 // Provide support for the /web-template/ JSON endpoint.
 include_once( 'includes/web-template.php' );
 
+// Provide support for the `web-template` content type.
+include_once( 'includes/wsuwp-json-web-template.php' );
+
 // Include the information form shortcode.
 include_once( 'includes/info-form.php' );
 
