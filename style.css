@@ -5,7 +5,7 @@
  Author:         WSU University Communications
  Author URI:     https://web.wsu.edu
  Template:       spine
- Version:        0.0.3
+ Version:        0.0.4
 */
 
 /**
@@ -96,22 +96,16 @@
 }
 
 /* Buttons */
-.home .announcements div {
+.home .announcements {
 	overflow: hidden;
 }
 
 .home .announcements .slide-up {
-	-webkit-transform: translateY(65px);
-	    -ms-transform: translateY(65px);
-	        transform: translateY(65px);
-	transition: -webkit-transform .5s ease;
-	transition: transform .5s ease;
-	transition: transform .5s ease, -webkit-transform .5s ease;
+	position: relative;
 }
 
-.home .announcements .slide-up.animate {
-	-webkit-transform: translateY(0);
-	    -ms-transform: translateY(0);
-	        transform: translateY(0);
+.home .announcements .slide-up p {
+	opacity: 0;
+	transition: opacity .5s ease .1s;
 }
 /*# sourceMappingURL=style.css.map */

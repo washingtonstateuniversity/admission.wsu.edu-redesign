@@ -1,5 +1,8 @@
 ( function( $, window ) {
 
+	// Sets initial positions of the Announcement buttons.
+	$( ".announcements .flex-item" ).css( "top", $( ".announcements" ).height() + "px" );
+
 	// Toggles the "Fields of Study" list.
 	$( ".drop" ).click( function() {
 		$( ".dropped" ).not( this ).removeClass( "dropped" );
@@ -67,8 +70,12 @@
 				var $element = $( this );
 
 				setTimeout( function() {
-					$element.addClass( "animate" );
-				}, i * 250 );
+					$element.animate( {
+						"top": "0"
+					}, 300, function() {
+						$element.find( "p" ).css( "opacity", "1" );
+					} );
+				}, i * 300 );
 			} );
 		}
 	}

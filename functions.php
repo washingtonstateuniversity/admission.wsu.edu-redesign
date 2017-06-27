@@ -1,7 +1,7 @@
 <?php
 
 // Provide support for the /web-template/ JSON endpoint.
-include_once( 'includes/web-template.php' );
+include_once( 'includes/wsuwp-json-web-template.php' );
 
 // Include the information form shortcode.
 include_once( 'includes/info-form.php' );
@@ -10,7 +10,7 @@ class WSU_Admission_Theme {
 	/**
 	 * @var string The version of the WSU Admission theme for cache breaking.
 	 */
-	public $version = '0.0.3';
+	public $version = '0.0.4';
 
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );

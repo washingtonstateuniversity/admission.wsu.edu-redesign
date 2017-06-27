@@ -7,10 +7,10 @@
 		$( ".section-wrapper-has-background" ).has( ".featured" ).each( function() {
 			var $element = $( this ),
 				container = this.getBoundingClientRect(),
-				y = $( window ).scrollTop();
+				y = $( window ).scrollTop() / 5;
 
 			if ( 0 < container.bottom ) {
-				$element.css( "background-position-y", "calc(50% + " + parseInt( y ) + "px)" );
+				$element.css( "background-position-y", "calc(50% + " + y + "px)" );
 			}
 		} );
 	}
