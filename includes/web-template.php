@@ -13,7 +13,7 @@ class WSUWP_Web_Template {
 	 * Add hooks.
 	 */
 	public function __construct() {
-		add_action( 'template_redirect', array( $this, 'handle_template_request' ), 9 );
+		add_action( 'template_redirect', array( $this, 'handle_template_request' ) );
 		add_filter( 'nav_menu_css_class', array( $this, 'modify_current_nav_item' ), 7 );
 	}
 
