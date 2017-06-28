@@ -11,7 +11,7 @@
 				<div class="globalbar"></div>
 
 				<div class="pillar">
-					<a href="/"></a>
+					<a href="https://admission.wsu.edu/"></a>
 				</div>
 
 				<div class="hashtag">
