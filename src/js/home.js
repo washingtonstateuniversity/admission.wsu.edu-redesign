@@ -9,40 +9,21 @@
 		$( this ).toggleClass( "dropped" );
 	} );
 
-	// Triggers ripple effect on "Important Announcements" button clicks.
-	// Based on https://codepen.io/ahse/pen/gaLKeM.
-	$( ".ripple" ).on( "click", function( e ) {
-		var $ripple = $( "<span class='ripple-effect'></span>" ),
-			$button = $( this ),
-			btnOffset = $button.offset(),
-			xPos = e.pageX - btnOffset.left,
-			yPos = e.pageY - btnOffset.top,
-			size = parseInt( Math.min( $button.height(), $button.width() ) * 0.5 ),
-			animateSize = parseInt( Math.max( $button.width(), $button.height() ) * Math.PI );
-
-		$ripple
-			.css( {
-				top: yPos,
-				left: xPos,
-				width: size,
-				height: size
-			} )
-			.appendTo( $button )
-			.animate( {
-					width: animateSize,
-					height: animateSize,
-					opacity: 0
-				}, 150, function() {
-					$( this ).remove();
-				}
-			);
+	// Unsets lazy text inline style.
+	$( window ).resize( function() {
+		if ( 693 > $( window ).width() ) {
+			$( ".lazy-text-scroll li" ).css( "top", "" );
+		}
 	} );
 
 	// Triggers scroll-based animations.
 	$( window ).scroll( function() {
 		window.requestAnimationFrame( function() {
-			animate_lazy_text();
 			slide_buttons();
+
+			if ( 693 < $( window ).width() ) {
+				animate_lazy_text();
+			}
 		} );
 	} );
 
@@ -54,7 +35,7 @@
 			$( ".lazy-text-scroll li" ).each( function() {
 				var $element = $( this ),
 					index = $element.index() + 1, // One-based
-					y = $( window ).scrollTop() / ( index * 5 );
+					y = $( window ).scrollTop() / ( index * 2 );
 
 				$element.css( "top", "-" + parseInt( y ) + "px" );
 			} );
@@ -72,10 +53,10 @@
 				setTimeout( function() {
 					$element.animate( {
 						"top": "0"
-					}, 300, function() {
+					}, 450, function() {
 						$element.find( "p" ).css( "opacity", "1" );
 					} );
-				}, i * 300 );
+				}, i * 450 );
 			} );
 		}
 	}

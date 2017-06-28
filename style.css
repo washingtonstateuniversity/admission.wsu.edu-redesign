@@ -5,7 +5,7 @@
  Author:         WSU University Communications
  Author URI:     https://web.wsu.edu
  Template:       spine
- Version:        0.0.4
+ Version:        0.0.5
 */
 
 /**
@@ -41,6 +41,10 @@
 		url(webfonts/314122_0_0.ttf) format(truetype);
 }
 
+main a {
+	position: relative;
+}
+
 .multiply,
 .heromask-gradient {
 	position: relative;
@@ -71,28 +75,139 @@
 	background: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 0) 50%);
 }
 
-.home .lazy-text-scroll li {
+/* Video */
+#jacket #binder .hero.video {
+	max-width: none;
+	z-index: 1;
+}
+
+#wsu-video-background {
+	height: 100%;
+	left: 0;
+	position: absolute !important; /* Inline style override */
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+.column.video .videoBG_wrapper #wsu-video-background:after {
+	content: "";
+	background: rgba(0, 0, 0, .1);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.videoBG_wrapper,
+.videoBG {
+	height: 100% !important; /* Inline style override */
+	width: 100% !important; /* Inline style override */
+}
+
+.videoBG video {
+	margin-left: 50%;
+	min-height: 550px !important;
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	width: auto;
+}
+
+.videoBG:after {
+	background: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 0) 50%);
+	content: "";
+	height: 100%;
+	mix-blend-mode: multiply;
+	position: absolute;
+	width: 100%;
+}
+
+/* Lazy text scroll */
+.home .lazy-text-bounds {
+	overflow: hidden;
+}
+
+.home .lazy-text-bounds .column.two {
+	padding: 0;
+}
+
+.home .column ul.lazy-text-scroll {
+	box-sizing: border-box;
+	margin-left: 45%;
+	padding: 2rem 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+
+.home .column ul.lazy-text-scroll li {
+	color: rgba(0, 0, 0, .1);
+	font-size: 2em;
 	position: relative;
 }
 
 .home .lazy-text-scroll li:first-of-type {
-	-webkit-transform: translateY(80px);
-	    -ms-transform: translateY(80px);
-	        transform: translateY(80px);
+	-webkit-transform: translateY(30px);
+	    -ms-transform: translateY(30px);
+	        transform: translateY(30px);
 }
 
 .home .lazy-text-scroll li:nth-of-type(2) {
 	margin-left: 20px;
-	-webkit-transform: translateY(70px);
-	    -ms-transform: translateY(70px);
-	        transform: translateY(70px);
+	-webkit-transform: translateY(-60px);
+	    -ms-transform: translateY(-60px);
+	        transform: translateY(-60px);
 }
 
 .home .lazy-text-scroll li:last-of-type {
-	margin-left: -20px;
-	-webkit-transform: translateY(50px);
-	    -ms-transform: translateY(50px);
-	        transform: translateY(50px);
+	margin-left: -250px;
+	-webkit-transform: translateY(-120px);
+	    -ms-transform: translateY(-120px);
+	        transform: translateY(-120px);
+}
+
+@media screen and ( max-width: 791px ) {
+
+	.home .column ul.lazy-text-scroll li {
+		font-size: 1.5em;
+	}
+}
+
+@media screen and ( max-width: 693px ) {
+
+	.home .column ul.lazy-text-scroll {
+		margin-left: 0;
+		position: relative;
+	}
+
+	.home .column ul.lazy-text-scroll li {
+		color: rgba(0, 0, 0, .3);
+		font-size: 1em;
+	}
+
+	.home .lazy-text-scroll li:first-of-type {
+		text-align: left;
+		-webkit-transform: translateY(20px);
+		    -ms-transform: translateY(20px);
+		        transform: translateY(20px);
+	}
+
+	.home .lazy-text-scroll li:nth-of-type(2) {
+		margin-left: 0;
+		text-align: right;
+		-webkit-transform: translateY(15px);
+		    -ms-transform: translateY(15px);
+		        transform: translateY(15px);
+	}
+
+	.home .lazy-text-scroll li:last-of-type {
+		margin-left: 0;
+		-webkit-transform: translateY(0);
+		    -ms-transform: translateY(0);
+		        transform: translateY(0);
+	}
 }
 
 /* Buttons */

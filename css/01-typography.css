@@ -30,3 +30,7 @@
 		url(webfonts/314122_0_0.woff) format(woff),
 		url(webfonts/314122_0_0.ttf) format(truetype);
 }
+
+main a {
+	position: relative;
+}
