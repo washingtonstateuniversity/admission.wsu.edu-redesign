@@ -11,7 +11,7 @@
 
 	// Unsets lazy text inline style.
 	$( window ).resize( function() {
-		if ( 693 > $( window ).width() ) {
+		if ( 694 > window.innerWidth ) {
 			$( ".lazy-text-scroll li" ).css( "top", "" );
 		}
 	} );
@@ -21,7 +21,7 @@
 		window.requestAnimationFrame( function() {
 			slide_buttons();
 
-			if ( 693 < $( window ).width() ) {
+			if ( 693 < window.innerWidth ) {
 				animate_lazy_text();
 			}
 		} );
