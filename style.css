@@ -75,6 +75,56 @@ main a {
 	background: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 0) 50%);
 }
 
+/* Video */
+#jacket #binder .hero.video {
+	max-width: none;
+	z-index: 1;
+}
+
+#wsu-video-background {
+	height: 100%;
+	left: 0;
+	position: absolute !important; /* Inline style override */
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+.column.video .videoBG_wrapper #wsu-video-background:after {
+	content: "";
+	background: rgba(0, 0, 0, .1);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.videoBG_wrapper,
+.videoBG {
+	height: 100% !important; /* Inline style override */
+	width: 100% !important; /* Inline style override */
+}
+
+.videoBG video {
+	margin-left: 50%;
+	min-height: 550px !important;
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	width: auto;
+}
+
+.videoBG:after {
+	background: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 0) 50%);
+	content: "";
+	height: 100%;
+	mix-blend-mode: multiply;
+	position: absolute;
+	width: 100%;
+}
+
+/* Lazy text scroll */
 .home .lazy-text-bounds {
 	overflow: hidden;
 }
