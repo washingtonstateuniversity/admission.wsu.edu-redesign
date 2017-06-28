@@ -41,6 +41,10 @@
 		url(webfonts/314122_0_0.ttf) format(truetype);
 }
 
+main a {
+	position: relative;
+}
+
 .multiply,
 .heromask-gradient {
 	position: relative;
