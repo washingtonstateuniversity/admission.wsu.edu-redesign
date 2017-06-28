@@ -41,7 +41,7 @@
 		url(webfonts/314122_0_0.ttf) format(truetype);
 }
 
-main a {
+.ripple {
 	position: relative;
 }
 

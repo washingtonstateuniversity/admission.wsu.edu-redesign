@@ -2,7 +2,7 @@
 
 	// Triggers ripple effect on link clicks.
 	// Based on https://codepen.io/ahse/pen/gaLKeM.
-	$( "main a" ).on( "click", function( e ) {
+	$( ".ripple" ).on( "click", function( e ) {
 		var $ripple = $( "<span class='ripple-effect'></span>" ),
 			$button = $( this ),
 			button_offset = $button.offset(),
