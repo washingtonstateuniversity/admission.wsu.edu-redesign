@@ -53,10 +53,10 @@
 				setTimeout( function() {
 					$element.animate( {
 						"top": "0"
-					}, 300, function() {
+					}, 450, function() {
 						$element.find( "p" ).css( "opacity", "1" );
 					} );
-				}, i * 300 );
+				}, i * 450 );
 			} );
 		}
 	}
