@@ -22,7 +22,7 @@
 
 		</section>
 
-		<div class="section-wrapper header-background">
+		<div class="section-wrapper section-wrapper-has-background header-background">
 
 			<section class="row single gutter pad-top pad-bottom featured md heromask-gradient">
 
