@@ -9,11 +9,21 @@
 		$( this ).toggleClass( "dropped" );
 	} );
 
+	// Unsets lazy text inline style.
+	$( window ).resize( function() {
+		if ( 693 > $( window ).width() ) {
+			$( ".lazy-text-scroll li" ).css( "top", "" );
+		}
+	} );
+
 	// Triggers scroll-based animations.
 	$( window ).scroll( function() {
 		window.requestAnimationFrame( function() {
-			animate_lazy_text();
 			slide_buttons();
+
+			if ( 693 < $( window ).width() ) {
+				animate_lazy_text();
+			}
 		} );
 	} );
 
@@ -25,7 +35,7 @@
 			$( ".lazy-text-scroll li" ).each( function() {
 				var $element = $( this ),
 					index = $element.index() + 1, // One-based
-					y = $( window ).scrollTop() / ( index * 5 );
+					y = $( window ).scrollTop() / ( index * 2 );
 
 				$element.css( "top", "-" + parseInt( y ) + "px" );
 			} );
