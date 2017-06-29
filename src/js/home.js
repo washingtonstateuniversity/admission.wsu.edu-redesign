@@ -9,10 +9,19 @@
 		$( this ).toggleClass( "dropped" );
 	} );
 
-	// Unsets lazy text inline style.
+	// Handles changes for different browser widths.
 	$( window ).resize( function() {
+
+		// Unsets lazy text inline style.
 		if ( 694 > window.innerWidth ) {
 			$( ".lazy-text-scroll li" ).css( "top", "" );
+		}
+
+		// Toggles homepage featured image effects.
+		if ( 737 > window.innerWidth ) {
+			$( ".home .hero.video" ).addClass( "featured heromask-gradient" );
+		} else {
+			$( ".home .hero.video" ).removeClass( "featured heromask-gradient" );
 		}
 	} );
 

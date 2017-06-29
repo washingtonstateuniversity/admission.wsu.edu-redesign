@@ -45,6 +45,17 @@
 	width: 100%;
 }
 
+@media screen and ( max-width: 736px ) {
+
+	#jacket #binder .hero.video {
+		z-index: initial;
+	}
+
+	#wsu-video-background {
+		display: none;
+	}
+}
+
 /* Lazy text scroll */
 .home .lazy-text-bounds {
 	overflow: hidden;
