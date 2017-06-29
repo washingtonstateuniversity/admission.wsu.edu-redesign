@@ -9,10 +9,19 @@
 		$( this ).toggleClass( "dropped" );
 	} );
 
-	// Unsets lazy text inline style.
+	// Handles changes for different browser widths.
 	$( window ).resize( function() {
-		if ( 693 > $( window ).width() ) {
+
+		// Unsets lazy text inline style.
+		if ( 694 > window.innerWidth ) {
 			$( ".lazy-text-scroll li" ).css( "top", "" );
+		}
+
+		// Toggles homepage featured image effects.
+		if ( 737 > window.innerWidth ) {
+			$( ".home .hero.video" ).addClass( "featured heromask-gradient" );
+		} else {
+			$( ".home .hero.video" ).removeClass( "featured heromask-gradient" );
 		}
 	} );
 
@@ -20,10 +29,7 @@
 	$( window ).scroll( function() {
 		window.requestAnimationFrame( function() {
 			slide_buttons();
-
-			if ( 693 < $( window ).width() ) {
-				animate_lazy_text();
-			}
+			animate_lazy_text();
 		} );
 	} );
 
@@ -35,9 +41,14 @@
 			$( ".lazy-text-scroll li" ).each( function() {
 				var $element = $( this ),
 					index = $element.index() + 1, // One-based
-					y = $( window ).scrollTop() / ( index * 2 );
+					y = $( window ).scrollTop() / ( index * 20 ),
+					element_bottom = this.getBoundingClientRect().bottom,
+					window_height = $( window ).height();
 
-				$element.css( "top", "-" + parseInt( y ) + "px" );
+				$element.css( {
+					"top": "-" + parseInt( y ) + "px",
+					"opacity": ( element_bottom / window_height ) * ( index * 1.5 )
+				} );
 			} );
 		}
 	}

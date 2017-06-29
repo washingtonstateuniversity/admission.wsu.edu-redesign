@@ -45,9 +45,21 @@
 	width: 100%;
 }
 
+@media screen and ( max-width: 736px ) {
+
+	#jacket #binder .hero.video {
+		z-index: initial;
+	}
+
+	#wsu-video-background {
+		display: none;
+	}
+}
+
 /* Lazy text scroll */
 .home .lazy-text-bounds {
 	overflow: hidden;
+	padding-bottom: 3rem;
 }
 
 .home .lazy-text-bounds .column.two {
@@ -57,30 +69,30 @@
 .home .column ul.lazy-text-scroll {
 	box-sizing: border-box;
 	margin-left: 45%;
-	padding: 2rem 0;
+	padding: 3rem 0 2rem;
 	position: absolute;
 	text-align: center;
 	width: 100%;
 }
 
 .home .column ul.lazy-text-scroll li {
-	color: rgba(0, 0, 0, .1);
+	color: #e5e5e5;
 	font-size: 2em;
 	position: relative;
 }
 
 .home .lazy-text-scroll li:first-of-type {
-	transform: translateY(30px);
+	transform: translateY(-48px);
 }
 
 .home .lazy-text-scroll li:nth-of-type(2) {
 	margin-left: 20px;
-	transform: translateY(-60px);
+	transform: translateY(-83px);
 }
 
 .home .lazy-text-scroll li:last-of-type {
 	margin-left: -250px;
-	transform: translateY(-120px);
+	transform: translateY(-124px);
 }
 
 @media screen and ( max-width: 791px ) {
@@ -88,34 +100,46 @@
 	.home .column ul.lazy-text-scroll li {
 		font-size: 1.5em;
 	}
+
+	.home .lazy-text-scroll li:first-of-type {
+		transform: translateY(-37px);
+	}
+
+	.home .lazy-text-scroll li:nth-of-type(2) {
+		transform: translateY(-67px);
+	}
+
+	.home .lazy-text-scroll li:last-of-type {
+		margin-left: -214px;
+		transform: translateY(-104px);
+	}
 }
 
 @media screen and ( max-width: 693px ) {
 
 	.home .column ul.lazy-text-scroll {
+		left: 0;
 		margin-left: 0;
-		position: relative;
+		padding-top: 0;
 	}
 
 	.home .column ul.lazy-text-scroll li {
-		color: rgba(0, 0, 0, .3);
-		font-size: 1em;
+		font-size: 1.2em;
 	}
 
 	.home .lazy-text-scroll li:first-of-type {
-		text-align: left;
-		transform: translateY(20px);
+		margin-left: 15px;
+		transform: translateY(26px);
 	}
 
 	.home .lazy-text-scroll li:nth-of-type(2) {
-		margin-left: 0;
-		text-align: right;
-		transform: translateY(15px);
+		margin-left: 30px;
+		transform: translateY(-2px);
 	}
 
 	.home .lazy-text-scroll li:last-of-type {
 		margin-left: 0;
-		transform: translateY(0);
+		transform: translateY(-32px);
 	}
 }
 
