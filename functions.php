@@ -19,6 +19,7 @@ class WSU_Admission_Theme {
 		add_filter( 'bu_navigation_filter_item_attrs', array( $this, 'bu_navigation_filter_item_atts' ), 10, 2 );
 		add_action( 'wp_footer', array( $this, 'carnegie_tracking_tags' ), 101 );
 		add_action( 'wp_footer', array( $this, 'chegg_conversion_pixels' ), 102 );
+		add_filter( 'spine_main_header_elements', array( $this, 'admission_header_elements' ), 12 );
 	}
 
 	/**
@@ -225,6 +226,32 @@ class WSU_Admission_Theme {
 		}
 
 		return false;
+	}
+
+	/**
+	 * Filters the Spine Header elements.
+	 *
+	 * @since 0.0.8
+	 */
+	public function admission_header_elements( $main_header_elements ) {
+		if ( is_page() ) {
+			$main_header_elements['sub_header_default'] = get_the_title();
+			$page_tagline = get_post_meta( get_the_ID(), 'sub-header', true );
+			$main_header_elements['page_tagline'] = ( $page_tagline ) ? $page_tagline : get_the_title();
+		} elseif ( is_category() ) {
+			$main_header_elements['sub_header_default'] = single_cat_title( '', false );
+			$main_header_elements['page_tagline'] = 'Posts';
+		} elseif ( is_single() ) {
+			$category = get_the_category();
+			$main_header_elements['sub_header_default'] = $category[0]->cat_name;
+			$main_header_elements['page_tagline'] = 'Posts';
+		}
+
+		if ( ! isset( $main_header_elements['page_tagline'] ) ) {
+			$main_header_elements['page_tagline'] = $main_header_elements['sub_header_default'];
+		}
+
+		return $main_header_elements;
 	}
 }
 
