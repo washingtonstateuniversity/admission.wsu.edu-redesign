@@ -245,6 +245,9 @@ class WSU_Admission_Theme {
 			$category = get_the_category();
 			$main_header_elements['sub_header_default'] = $category[0]->cat_name;
 			$main_header_elements['page_tagline'] = 'Posts';
+		} elseif ( is_404() ) {
+			$main_header_elements['sub_header_default'] = '404';
+			$main_header_elements['page_tagline'] = 'Page Not Found';
 		}
 
 		if ( ! isset( $main_header_elements['page_tagline'] ) ) {

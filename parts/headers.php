@@ -20,7 +20,7 @@ $spine_main_header_values = spine_get_main_header();
 
 if ( true === spine_get_option( 'main_header_show' ) ) :
 
-	$apply_header_elements = ( spine_has_featured_image() || is_single() || is_archive() ) ? true : false;
+	$apply_header_elements = ( spine_has_featured_image() || is_single() || is_archive() || is_404() ) ? true : false;
 ?>
 <header class="main-header section-wrapper-has-background"<?php if ( spine_has_featured_image() ) { ?> style="background-image: url('<?php echo esc_url( spine_get_featured_image_src() ); ?>');"<?php } ?>>
 

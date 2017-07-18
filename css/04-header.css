@@ -1,6 +1,7 @@
 .has-featured-image .main-header,
 .archive .main-header,
-.single-post .main-header {
+.single-post .main-header,
+.error404 .main-header {
 	background-image: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 1) 50%);
 	background-position: center center;
 	background-size: cover;
@@ -22,7 +23,8 @@
 
 .has-featured-image .main-header:before,
 .archive .main-header:before,
-.single-post .main-header:before {
+.single-post .main-header:before,
+.error404 .main-header:before {
 	background: linear-gradient(to right, #820c23 0%, #a60f2d 100%);
 	content: "";
 	height: 4px;
@@ -76,7 +78,8 @@
 
 .has-featured-image .main-header .header-group,
 .archive .main-header .header-group,
-.single-post .main-header .header-group {
+.single-post .main-header .header-group,
+.error404 .main-header .header-group {
 	padding: .1rem 2rem !important;
 	position: relative !important;
 }
@@ -94,7 +97,8 @@
 
 .has-featured-image .main-header:after,
 .archive .main-header:after,
-.single-post .main-header:after {
+.single-post .main-header:after,
+.error404 .main-header:after {
 	background: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 0) 50%);
 	content: "";
 	height: 100%;
