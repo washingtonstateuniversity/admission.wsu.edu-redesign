@@ -21,6 +21,7 @@ class WSU_Admission_Theme {
 		add_action( 'wp_footer', array( $this, 'chegg_conversion_pixels' ), 102 );
 		add_filter( 'spine_main_header_elements', array( $this, 'admission_header_elements' ), 12 );
 		add_filter( 'bu_navigation_filter_item_attrs', array( $this, 'bu_navigation_filter_item_attrs' ), 10, 2 );
+		add_action( 'init', array( $this, 'register_footer_menu' ) );
 	}
 
 	/**
@@ -288,6 +289,15 @@ class WSU_Admission_Theme {
 		}
 
 		return $item_classes;
+	}
+
+	/**
+	 * Registers the menu location for the site footer.
+	 *
+	 * @since 0.0.10
+	 */
+	public function register_footer_menu() {
+		register_nav_menu( 'footer', 'Footer' );
 	}
 }
 
