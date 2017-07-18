@@ -20,12 +20,15 @@ $spine_main_header_values = spine_get_main_header();
 
 if ( true === spine_get_option( 'main_header_show' ) ) :
 
+	$apply_header_elements = ( spine_has_featured_image() || is_single() || is_archive() ) ? true : false;
 ?>
 <header class="main-header section-wrapper-has-background"<?php if ( spine_has_featured_image() ) { ?> style="background-image: url('<?php echo esc_url( spine_get_featured_image_src() ); ?>');"<?php } ?>>
 
+	<?php if ( $apply_header_elements ) { ?>
 	<a class="pillar ripple" href="<?php home_url(); ?>"></a>
 
 	<a class="hashtag ripple" href="https://tagboard.com/futurecougs/search">#FutureCoug</a>
+	<?php } ?>
 
 	<div class="header-group hgroup">
 
@@ -38,9 +41,11 @@ if ( true === spine_get_option( 'main_header_show' ) ) :
 
 	</div>
 
+	<?php if ( $apply_header_elements ) { ?>
 	<div class="header-bottom featured">
 		<h1><?php echo esc_html( $spine_main_header_values['page_tagline'] ); ?></h1>
 	</div>
+	<?php } ?>
 
 </header>
 
