@@ -5,7 +5,7 @@
  Author:         WSU University Communications
  Author URI:     https://web.wsu.edu
  Template:       spine
- Version:        0.0.8
+ Version:        0.0.9
 */
 
 /**
@@ -258,7 +258,7 @@
 .archive .main-header,
 .single-post .main-header,
 .error404 .main-header {
-	background-image: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 1) 50%);
+	background-color: #262626;
 	background-position: center center;
 	background-size: cover;
 	box-sizing: border-box;
