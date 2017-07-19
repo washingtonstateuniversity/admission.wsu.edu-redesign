@@ -15,22 +15,28 @@
 	padding: 0 30px 0 20px;
 }
 
-.site-footer ul li {
+.site-footer li {
 	display: inline;
+	float: left;
 	font-size: .875em;
 	margin: 0;
 	padding: 0;
 }
 
 .site-footer a {
+	display: block;
 	color: #fff;
-	float: left;
 	line-height: 54px;
 	padding: 0 10px;
+	transition: background .4s, color .4s;
 }
 
 .site-footer a:hover {
 	background-color: #ca1237;
+}
+
+.site-footer .mobile {
+	display: none;
 }
 
 @media screen and (min-width: 990px) {
@@ -58,6 +64,35 @@
 
 	.admin-bar .site-footer {
 		bottom: 46px;
+	}
+}
+
+@media screen and (max-width: 693px) {
+
+	.site-footer .desktop {
+		display: none;
+	}
+
+	.site-footer .mobile {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	.site-footer ul {
+		box-sizing: border-box;
+		padding: 0 20px;
+		width: 100%;
+	}
+
+	.site-footer li {
+		text-align: center;
+		width: 25%;
+	}
+
+	.site-footer a {
+		font-weight: 600;
 	}
 }
 
