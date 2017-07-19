@@ -36,4 +36,15 @@ if ( ! is_front_page() && ! is_home() && spine_display_breadcrumbs( 'bottom' ) )
 	}
 	?>
 
+	<ul class="social-media">
+		<?php foreach ( spine_social_options() as $channel => $channel_url ) { ?>
+		<li>
+			<a class="ripple <?php echo esc_attr( $channel ); ?>" href="<?php echo esc_url( $channel_url ); ?>"><?php echo esc_html( ucfirst( $channel ) ); ?></a>
+		</li>
+		<?php } ?>
+		<li>
+			<a class="ripple back-to-top" href="#">Back to top</a>
+		</li>
+	</ul>
+
 </footer>
