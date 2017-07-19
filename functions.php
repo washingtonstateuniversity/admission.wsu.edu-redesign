@@ -22,6 +22,7 @@ class WSU_Admission_Theme {
 		add_filter( 'spine_main_header_elements', array( $this, 'admission_header_elements' ), 12 );
 		add_filter( 'bu_navigation_filter_item_attrs', array( $this, 'bu_navigation_filter_item_attrs' ), 10, 2 );
 		add_action( 'init', array( $this, 'register_footer_menu' ) );
+		add_filter( 'nav_menu_css_class', array( $this, 'footer_menu_classes' ), 10, 3 );
 	}
 
 	/**
@@ -299,6 +300,24 @@ class WSU_Admission_Theme {
 	public function register_footer_menu() {
 		register_nav_menu( 'footer-desktop', 'Footer (desktop)' );
 		register_nav_menu( 'footer-mobile', 'Footer (mobile)' );
+	}
+
+	/**
+	 * Removes the default menu item classes and adds "ripple" for the footer menus.
+	 *
+	 *
+	 * @param array    $classes Current list of nav menu classes.
+	 * @param WP_Post  $item    Post object representing the menu item.
+	 * @param stdClass $args    Arguments used to create the menu.
+	 *
+	 * @return array Modified list of nav menu classes.
+	 */
+	public function footer_menu_classes( $classes, $item, $args ) {
+		if ( 'footer-desktop' === $args->menu->slug || 'footer-mobile' === $args->menu->slug ) {
+			$classes = array( 'ripple' );
+		}
+
+		return $classes;
 	}
 }
 
