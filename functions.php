@@ -20,6 +20,7 @@ class WSU_Admission_Theme {
 		add_action( 'wp_footer', array( $this, 'carnegie_tracking_tags' ), 101 );
 		add_action( 'wp_footer', array( $this, 'chegg_conversion_pixels' ), 102 );
 		add_filter( 'spine_main_header_elements', array( $this, 'admission_header_elements' ), 12 );
+		add_filter( 'bu_navigation_filter_item_attrs', array( $this, 'bu_navigation_filter_item_attrs' ), 10, 2 );
 	}
 
 	/**
@@ -255,6 +256,29 @@ class WSU_Admission_Theme {
 		}
 
 		return $main_header_elements;
+	}
+
+	/**
+	 * Filter the list item classes to manually add active on the current page in nav.
+	 *
+	 * @since 0.0.10
+	 *
+	 * @param array   $item_classes List of classes assigned to the list item.
+	 * @param WP_Post $page         Post object for the current page.
+	 *
+	 * @return array
+	 */
+	public function bu_navigation_filter_item_attrs( $item_classes, $page ) {
+		if ( is_category() ) {
+			$category = get_category( get_query_var( 'cat' ) );
+			$category_url = get_category_link( $category->cat_ID );
+
+			if ( isset( $page->url ) && trailingslashit( $page->url ) === $category_url ) {
+				$item_classes[] = 'active';
+			}
+		}
+
+		return $item_classes;
 	}
 }
 
