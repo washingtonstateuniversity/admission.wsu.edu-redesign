@@ -292,12 +292,13 @@ class WSU_Admission_Theme {
 	}
 
 	/**
-	 * Registers the menu location for the site footer.
+	 * Registers the menu locations for the site footer.
 	 *
 	 * @since 0.0.10
 	 */
 	public function register_footer_menu() {
-		register_nav_menu( 'footer', 'Footer' );
+		register_nav_menu( 'footer-desktop', 'Footer (desktop)' );
+		register_nav_menu( 'footer-mobile', 'Footer (mobile)' );
 	}
 }
 

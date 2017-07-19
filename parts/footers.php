@@ -9,20 +9,31 @@ if ( ! is_front_page() && ! is_home() && spine_display_breadcrumbs( 'bottom' ) )
 ?>
 <footer class="site-footer">
 	<?php
-	if ( has_nav_menu( 'footer' ) ) {
-		$spine_site_args = array(
-			'theme_location' => 'footer',
-			'container' => false,
-			'container_class' => false,
-			'container_id' => false,
-			'fallback_cb' => false,
-			'menu_class' => null,
-			'menu_id' => null,
-			'items_wrap' => '<ul>%3$s</ul>',
-			'depth' => 1,
-		);
+	$footer_menu_args = array(
+		'container' => false,
+		'container_class' => false,
+		'container_id' => false,
+		'fallback_cb' => false,
+		'menu_id' => null,
+		'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+		'depth' => 1,
+	);
 
-		wp_nav_menu( $spine_site_args );
+	// Desktop footer menu.
+	if ( has_nav_menu( 'footer-desktop' ) ) {
+		$footer_menu_args['theme_location'] = 'footer-desktop';
+		$footer_menu_args['menu_class'] = 'desktop';
+
+		wp_nav_menu( $footer_menu_args );
+	}
+
+	// Mobile footer menu.
+	if ( has_nav_menu( 'footer-mobile' ) ) {
+		$footer_menu_args['theme_location'] = 'footer-mobile';
+		$footer_menu_args['menu_class'] = 'mobile';
+
+		wp_nav_menu( $footer_menu_args );
 	}
 	?>
+
 </footer>
