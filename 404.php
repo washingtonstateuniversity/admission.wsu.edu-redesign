@@ -4,40 +4,6 @@
 
 		<?php get_template_part( 'parts/headers' ); ?>
 
-		<section class="row single">
-
-			<div class="column one">
-
-				<div class="globalbar"></div>
-
-				<div class="pillar">
-					<a href="https://admission.wsu.edu/"></a>
-				</div>
-
-				<div class="hashtag">
-					<a href="https://tagboard.com/futurecougs/search">#FutureCougs</a>
-				</div>
-
-			</div>
-
-		</section>
-
-		<div class="section-wrapper section-wrapper-has-background header-background">
-
-			<section class="row single gutter pad-top pad-bottom featured md heromask-gradient">
-
-				<div class="column one">
-
-					<div class="flexwrap">
-						<h1>Page Not Found</h1>
-					</div>
-
-				</div>
-
-			</section>
-
-		</div>
-
 		<section class="row side-right gutter pad-top">
 
 			<div class="column one">

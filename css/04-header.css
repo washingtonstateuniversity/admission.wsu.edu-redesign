@@ -1,0 +1,143 @@
+.has-featured-image .main-header,
+.archive .main-header,
+.single-post .main-header,
+.error404 .main-header {
+	background-image: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 1) 50%);
+	background-position: center center;
+	background-size: cover;
+	box-sizing: border-box;
+	height: 250px;
+	position: relative;
+	top: auto;
+}
+
+.has-featured-image.depth-3 .main-header,
+.archive .main-header {
+	height: 350px;
+}
+
+.has-featured-image.depth-2 .main-header,
+.has-featured-image.depth-1 .main-header {
+	height: 450px;
+}
+
+.has-featured-image .main-header:before,
+.archive .main-header:before,
+.single-post .main-header:before,
+.error404 .main-header:before {
+	background: linear-gradient(to right, #820c23 0%, #a60f2d 100%);
+	content: "";
+	height: 4px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.main-header .pillar {
+	background: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/06/img-cougar-pillar-200x320.png) no-repeat center bottom #a31d36;
+	background-size: 80px;
+	border: none;
+	height: 128px;
+	position: fixed;
+	right: 32px;
+	top: 0;
+	transition: height .2s ease-in-out;
+	width: 80px;
+	z-index: 100;
+}
+
+.admin-bar .main-header .pillar {
+	top: 32px;
+}
+
+.main-header .pillar:hover {
+	height: 138px;
+}
+
+.main-header .hashtag {
+	background-color: #a31d36;
+	border: none;
+	color: #fff;
+	display: inline-block;
+	font-size: .7rem;
+	font-weight: 600;
+	left: 0;
+	letter-spacing: 1px;
+	margin-top: 18px;
+	padding: 1px 30px;
+	text-transform: uppercase;
+	transition: background-color .2s ease-in-out, padding-right .2s ease-in-out;
+	z-index: 98;
+}
+
+.main-header .hashtag:hover {
+	background-color: #ca1237;
+	padding-right: 38px;
+}
+
+.has-featured-image .main-header .header-group,
+.archive .main-header .header-group,
+.single-post .main-header .header-group,
+.error404 .main-header .header-group {
+	padding: .1rem 2rem !important;
+	position: relative !important;
+}
+
+.main-header .header-bottom {
+	bottom: 0;
+	padding: 0 2rem 2rem;
+	position: absolute;
+}
+
+.main-header .header-bottom h1 {
+	animation: fadein 2s;
+	color: #fff;
+}
+
+.has-featured-image .main-header:after,
+.archive .main-header:after,
+.single-post .main-header:after,
+.error404 .main-header:after {
+	background: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 0) 50%);
+	content: "";
+	height: 100%;
+	mix-blend-mode: multiply;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+@keyframes fadein {
+
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 989px) {
+
+	.main-header .pillar,
+	.admin-bar .main-header .pillar {
+		background-size: 60px;
+		height: 96px;
+		top: 50px;
+		width: 60px;
+	}
+
+	.main-header .pillar:hover {
+		height: 106px;
+	}
+}
+
+@media screen and (max-width: 693px) {
+
+	.main-header .pillar {
+		right: 20px;
+	}
+}
