@@ -278,6 +278,15 @@ class WSU_Admission_Theme {
 			}
 		}
 
+		if ( is_singular( 'post' ) ) {
+			$category = get_the_category();
+			$category_url = get_category_link( $category[0]->cat_ID );
+
+			if ( isset( $page->url ) && trailingslashit( $page->url ) === $category_url ) {
+				$item_classes[] = 'active';
+			}
+		}
+
 		return $item_classes;
 	}
 }
