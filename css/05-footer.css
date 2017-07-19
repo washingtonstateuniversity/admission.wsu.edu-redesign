@@ -39,6 +39,37 @@
 	display: none;
 }
 
+.site-footer .social-media {
+	float: right;
+}
+
+.site-footer .social-media a {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 32px;
+	overflow: hidden;
+	text-indent: 36px;
+	white-space: nowrap;
+	width: 36px;
+}
+
+.site-footer .social-media .facebook {
+	background-image: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/07/ico-facebook-wht-nobrdr-96x96.png);
+}
+
+.site-footer .social-media .twitter {
+	background-image: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/07/ico-twitter-wht-nobrdr-96x96.png);
+}
+
+.site-footer .social-media .instagram {
+	background-image: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/07/ico-instagram-wht-nobrdr-96x96.png);
+}
+
+.site-footer .social-media .back-to-top {
+	background-image: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/06/arrow-up-wht.png);
+	background-size: 16px;
+}
+
 @media screen and (min-width: 990px) {
 
 	.site-footer {
@@ -79,6 +110,10 @@
 }
 
 @media screen and (max-width: 480px) {
+
+	.site-footer .social-media {
+		display: none;
+	}
 
 	.site-footer ul {
 		box-sizing: border-box;
