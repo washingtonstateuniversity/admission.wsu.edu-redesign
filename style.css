@@ -411,7 +411,7 @@
 }
 
 .site-footer {
-	background: #820c23;
+	background: linear-gradient(to right, #820c23 0%, #a60f2d 100%);
 	bottom: 0;
 	color: #fff;
 	height: 54px;
