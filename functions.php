@@ -244,7 +244,7 @@ class WSU_Admission_Theme {
 		} elseif ( is_category() ) {
 			$main_header_elements['sub_header_default'] = single_cat_title( '', false );
 			$main_header_elements['page_tagline'] = 'Posts';
-		} elseif ( is_single() ) {
+		} elseif ( is_singular( 'post' ) ) {
 			$category = get_the_category();
 			$main_header_elements['sub_header_default'] = $category[0]->cat_name;
 			$main_header_elements['page_tagline'] = 'Posts';
