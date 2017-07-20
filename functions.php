@@ -6,6 +6,9 @@ include_once( 'includes/wsuwp-json-web-template.php' );
 // Include the information form shortcode.
 include_once( 'includes/info-form.php' );
 
+// Include additional customizer options.
+include_once( 'includes/extended-customizer.php' );
+
 class WSU_Admission_Theme {
 	/**
 	 * @var string The version of the WSU Admission theme for cache breaking.
@@ -238,6 +241,9 @@ class WSU_Admission_Theme {
 	 * @since 0.0.8
 	 */
 	public function admission_header_elements( $main_header_elements ) {
+		$main_header_elements['hashtag'] = spine_get_option( 'global_main_header_hashtag' );
+		$main_header_elements['hashtag_url'] = spine_get_option( 'global_main_header_hashtag_url' );
+
 		if ( is_page() ) {
 			$main_header_elements['sub_header_default'] = get_the_title();
 			$page_tagline = get_post_meta( get_the_ID(), 'sub-header', true );

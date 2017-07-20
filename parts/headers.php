@@ -14,7 +14,11 @@
  * sub_header_default
  * sup_header_alternate
  * sub_header_alternate
- * page_tagline (added by this child theme)
+ *
+ * Added by this theme:
+ * hashtag
+ * hashtag_url
+ * page_tagline
  */
 $spine_main_header_values = spine_get_main_header();
 
@@ -27,7 +31,10 @@ if ( true === spine_get_option( 'main_header_show' ) ) :
 	<?php if ( $apply_header_elements ) { ?>
 	<a class="pillar ripple" href="<?php home_url(); ?>"></a>
 
-	<a class="hashtag ripple" href="https://tagboard.com/futurecougs/search">#FutureCoug</a>
+	<?php if ( $spine_main_header_values['hashtag'] ) { ?>
+	<a class="hashtag ripple" href="<?php echo esc_url( $spine_main_header_values['hashtag_url'] ); ?>"><?php echo esc_html( $spine_main_header_values['hashtag'] ); ?></a>
+	<?php } ?>
+
 	<?php } ?>
 
 	<div class="header-group hgroup">
