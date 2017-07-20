@@ -23,6 +23,7 @@ class WSU_Admission_Theme {
 		add_filter( 'bu_navigation_filter_item_attrs', array( $this, 'bu_navigation_filter_item_attrs' ), 10, 2 );
 		add_action( 'init', array( $this, 'register_footer_menu' ) );
 		add_filter( 'nav_menu_css_class', array( $this, 'footer_menu_classes' ), 10, 3 );
+		add_filter( 'nav_menu_item_id', array( $this, 'footer_menu_item_ids' ), 10, 3 );
 	}
 
 	/**
@@ -318,6 +319,24 @@ class WSU_Admission_Theme {
 		}
 
 		return $classes;
+	}
+
+	/**
+	 * Removes the ids from the footer menu items.
+	 *
+	 *
+	 * @param string   $menu_id The ID that is applied to the menu item's <li> element.
+	 * @param WP_Post  $item    Post object representing the menu item.
+	 * @param stdClass $args    Arguments used to create the menu.
+	 *
+	 * @return string|bool
+	 */
+	public function footer_menu_item_ids( $menu_id, $item, $args ) {
+		if ( 'footer-desktop' === $args->menu->slug || 'footer-mobile' === $args->menu->slug ) {
+			return false;
+		}
+
+		return $menu_id;
 	}
 }
 
