@@ -11,7 +11,8 @@ $page_heading = get_post_meta( get_the_ID(), '_wsuwp_web_app_subhead', true );
 ?>
 <main class="app-web-template">
 
-<header class="main-header section-wrapper-has-background"<?php if ( $background_image ) { ?> style="background-image: url('<?php echo esc_url( $background_image ); ?>');"<?php } ?>>
+<header class="main-header section-wrapper-has-background"<?php if ( $background_image ) { ?>
+		style="background-image: url('<?php echo esc_url( $background_image ); ?>');"<?php } ?>>
 
 	<a class="pillar ripple" href="<?php home_url(); ?>"></a>
 
