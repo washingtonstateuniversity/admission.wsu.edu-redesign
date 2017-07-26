@@ -21,6 +21,9 @@ class WSU_Admission_Theme {
 		add_action( 'wp_footer', array( $this, 'chegg_conversion_pixels' ), 102 );
 		add_filter( 'spine_main_header_elements', array( $this, 'admission_header_elements' ), 12 );
 		add_filter( 'bu_navigation_filter_item_attrs', array( $this, 'bu_navigation_filter_item_attrs' ), 10, 2 );
+		add_action( 'init', array( $this, 'register_footer_menu' ) );
+		add_filter( 'nav_menu_css_class', array( $this, 'footer_menu_classes' ), 10, 3 );
+		add_filter( 'nav_menu_item_id', array( $this, 'footer_menu_item_ids' ), 10, 3 );
 	}
 
 	/**
@@ -242,7 +245,7 @@ class WSU_Admission_Theme {
 		} elseif ( is_category() ) {
 			$main_header_elements['sub_header_default'] = single_cat_title( '', false );
 			$main_header_elements['page_tagline'] = 'Posts';
-		} elseif ( is_single() ) {
+		} elseif ( is_singular( 'post' ) ) {
 			$category = get_the_category();
 			$main_header_elements['sub_header_default'] = $category[0]->cat_name;
 			$main_header_elements['page_tagline'] = 'Posts';
@@ -288,6 +291,52 @@ class WSU_Admission_Theme {
 		}
 
 		return $item_classes;
+	}
+
+	/**
+	 * Registers the menu locations for the site footer.
+	 *
+	 * @since 0.0.10
+	 */
+	public function register_footer_menu() {
+		register_nav_menu( 'footer-desktop', 'Footer (desktop)' );
+		register_nav_menu( 'footer-mobile', 'Footer (mobile)' );
+	}
+
+	/**
+	 * Removes the default menu item classes and adds "ripple" for the footer menus.
+	 *
+	 *
+	 * @param array    $classes Current list of nav menu classes.
+	 * @param WP_Post  $item    Post object representing the menu item.
+	 * @param stdClass $args    Arguments used to create the menu.
+	 *
+	 * @return array Modified list of nav menu classes.
+	 */
+	public function footer_menu_classes( $classes, $item, $args ) {
+		if ( 'footer-desktop' === $args->menu->slug || 'footer-mobile' === $args->menu->slug ) {
+			$classes = array( 'ripple' );
+		}
+
+		return $classes;
+	}
+
+	/**
+	 * Removes the ids from the footer menu items.
+	 *
+	 *
+	 * @param string   $menu_id The ID that is applied to the menu item's <li> element.
+	 * @param WP_Post  $item    Post object representing the menu item.
+	 * @param stdClass $args    Arguments used to create the menu.
+	 *
+	 * @return string|bool
+	 */
+	public function footer_menu_item_ids( $menu_id, $item, $args ) {
+		if ( 'footer-desktop' === $args->menu->slug || 'footer-mobile' === $args->menu->slug ) {
+			return false;
+		}
+
+		return $menu_id;
 	}
 }
 

@@ -410,6 +410,139 @@
 	}
 }
 
+.site-footer {
+	background: linear-gradient(to right, #820c23 0%, #a60f2d 100%);
+	bottom: 0;
+	color: #fff;
+	height: 54px;
+	position: fixed;
+	width: 100%;
+	z-index: 9999;
+}
+
+.site-footer ul {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0 30px 0 20px;
+}
+
+.site-footer li {
+	display: inline;
+	float: left;
+	font-size: .875em;
+	margin: 0;
+	padding: 0;
+}
+
+.site-footer a {
+	display: block;
+	color: #fff;
+	line-height: 54px;
+	padding: 0 10px;
+	transition: background .4s, color .4s;
+}
+
+.site-footer a:hover {
+	background-color: #ca1237;
+}
+
+.site-footer .mobile {
+	display: none;
+}
+
+.site-footer .social-media {
+	float: right;
+}
+
+.site-footer .social-media a {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 32px;
+	overflow: hidden;
+	text-indent: 36px;
+	white-space: nowrap;
+	width: 36px;
+}
+
+.site-footer .social-media .facebook {
+	background-image: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/07/ico-facebook-wht-nobrdr-96x96.png);
+}
+
+.site-footer .social-media .twitter {
+	background-image: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/07/ico-twitter-wht-nobrdr-96x96.png);
+}
+
+.site-footer .social-media .instagram {
+	background-image: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/07/ico-instagram-wht-nobrdr-96x96.png);
+}
+
+.site-footer .social-media .back-to-top {
+	background-image: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/06/arrow-up-wht.png);
+	background-size: 16px;
+}
+
+@media screen and (min-width: 990px) {
+
+	.site-footer {
+		width: calc(100% - 198px);
+	}
+}
+
+@media screen and (min-width: 1188px) {
+
+	.site-footer {
+		width: calc(50% + (1188px / 2) - 198px);
+	}
+}
+
+@media screen and (max-width: 989px) {
+
+	.admin-bar .site-footer {
+		bottom: 32px;
+	}
+}
+
+@media screen and (max-width: 782px) {
+
+	.admin-bar .site-footer {
+		bottom: 46px;
+	}
+}
+
+@media screen and (max-width: 693px) {
+
+	.site-footer .desktop {
+		display: none;
+	}
+
+	.site-footer .mobile {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	.site-footer .social-media {
+		display: none;
+	}
+
+	.site-footer ul {
+		box-sizing: border-box;
+		padding: 0 20px;
+		width: 100%;
+	}
+
+	.site-footer li {
+		text-align: center;
+		width: 25%;
+	}
+
+	.site-footer a {
+		font-weight: 600;
+	}
+}
+
 [name="google_conversion_frame"] {
 	display: none;
 }
