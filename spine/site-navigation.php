@@ -1,16 +1,5 @@
 <nav id="spine-sitenav" class="spine-sitenav">
 	<?php
-
-	if ( WSU_Admission_Theme::show_main_navigation() ) {
-		$admission_menu_id = 'network';
-	} else {
-		$admission_menu_id = 'site';
-	}
-
-	if ( 'network' === $admission_menu_id ) {
-		switch_to_blog( WSU_Admission_Theme::get_main_site_id() );
-	}
-
 	if ( function_exists( 'bu_navigation_display_primary' ) ) {
 		$bu_nav_args = array(
 			'post_types'      => array( 'page' ), // post types to display
@@ -31,7 +20,7 @@
 	} else {
 		$spine_site_args = array(
 			'theme_location'  => 'site',
-			'menu'            => $admission_menu_id,
+			'menu'            => 'site',
 			'container'       => false,
 			'container_class' => false,
 			'container_id'    => false,
@@ -43,11 +32,5 @@
 
 		wp_nav_menu( $spine_site_args );
 	}
-
-	if ( ms_is_switched() ) {
-		restore_current_blog();
-	}
 	?>
 </nav>
-
-<?php restore_current_blog();
