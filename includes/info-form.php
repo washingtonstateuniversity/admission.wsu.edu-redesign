@@ -626,7 +626,7 @@ class WSUWP_Admission_Info_Form_Shortcode {
 				</select>
 
 				<label class="hidden">Entering as a ...</label>
-				<select class="required" id="AnticipatedStartTerm" name="EnteringAs">
+				<select class="required" id="EnteringAs" name="EnteringAs">
 					<option value="">Entering as a ...</option>
 					<option value="TRD">Freshman</option>
 					<option value="TRN">Transfer Student</option>
