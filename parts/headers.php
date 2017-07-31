@@ -26,7 +26,8 @@ if ( true === spine_get_option( 'main_header_show' ) ) :
 
 	$apply_header_elements = ( spine_has_featured_image() || is_single() || is_archive() || is_404() ) ? true : false;
 ?>
-<header class="main-header section-wrapper-has-background"<?php if ( spine_has_featured_image() ) { ?> style="background-image: url('<?php echo esc_url( spine_get_featured_image_src() ); ?>');"<?php } ?>>
+<header class="main-header section-wrapper-has-background"<?php if ( spine_has_featured_image() ) { ?>
+		style="background-image: url('<?php echo esc_url( spine_get_featured_image_src() ); ?>');"<?php } ?>>
 
 	<?php if ( $apply_header_elements ) { ?>
 	<a class="pillar ripple" href="<?php home_url(); ?>"></a>
@@ -60,9 +61,11 @@ if ( true === spine_get_option( 'main_header_show' ) ) :
 endif;
 
 if ( ! is_front_page() && ! is_home() && spine_display_breadcrumbs( 'top' ) ) {
-	?><section class="row single breadcrumbs breadcrumbs-top gutter pad-top" typeof="BreadcrumbList" vocab="http://schema.org/">
+	?>
+	<section class="row single breadcrumbs breadcrumbs-top gutter pad-top" typeof="BreadcrumbList" vocab="http://schema.org/">
 		<div class="column one"><?php bcn_display(); ?></div>
-	</section><?php
+	</section>
+	<?php
 }
 
 if ( is_front_page() && ! is_home() && true === spine_get_option( 'front_page_title' ) ) :

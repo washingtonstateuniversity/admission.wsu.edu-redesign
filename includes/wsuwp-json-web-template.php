@@ -92,7 +92,6 @@ class WSUWP_New_JSON_Web_Template {
 		?>
 		<label for="application_url">Application URL</label>
 		<input id="application_url" class="widefat" name="application_url" type="text" value="<?php echo esc_url( $url ); ?>" />
-		<?php  ?>
 		<p class="description">This should match the HREF element of a menu item in the primary navigation for this site. This item will be marked as current when viewing the template via another application.</p>
 
 		<label for="application_subhead">Subheading</label>
