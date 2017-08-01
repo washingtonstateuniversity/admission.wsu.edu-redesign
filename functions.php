@@ -157,18 +157,21 @@ class WSU_Admission_Theme {
 	public function admission_header_elements( $main_header_elements ) {
 		$main_header_elements['hashtag'] = spine_get_option( 'global_main_header_hashtag' );
 		$main_header_elements['hashtag_url'] = spine_get_option( 'global_main_header_hashtag_url' );
+		$blog_tagline = 'Newsletters';
 
 		if ( is_page() ) {
 			$main_header_elements['sub_header_default'] = get_the_title();
 			$page_tagline = get_post_meta( get_the_ID(), 'sub-header', true );
 			$main_header_elements['page_tagline'] = ( $page_tagline ) ? $page_tagline : get_the_title();
+		} elseif ( is_archive() && ! is_post_type_archive() ) {
+			$main_header_elements['page_tagline'] = $blog_tagline;
 		} elseif ( is_category() ) {
 			$main_header_elements['sub_header_default'] = single_cat_title( '', false );
-			$main_header_elements['page_tagline'] = 'Posts';
+			$main_header_elements['page_tagline'] = $blog_tagline;
 		} elseif ( is_singular( 'post' ) ) {
 			$category = get_the_category();
 			$main_header_elements['sub_header_default'] = $category[0]->cat_name;
-			$main_header_elements['page_tagline'] = 'Posts';
+			$main_header_elements['page_tagline'] = $blog_tagline;
 		} elseif ( is_404() ) {
 			$main_header_elements['sub_header_default'] = '404';
 			$main_header_elements['page_tagline'] = 'Page Not Found';
