@@ -297,8 +297,11 @@
 	height: 128px;
 	position: fixed;
 	right: 32px;
+	overflow: hidden;
+	text-indent: 80px;
 	top: 0;
 	transition: height .2s ease-in-out;
+	white-space: nowrap;
 	width: 80px;
 	z-index: 100;
 }
