@@ -54,19 +54,19 @@
 }
 
 .site-footer .social-media .facebook {
-	background-image: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/07/ico-facebook-wht-nobrdr-96x96.png);
+	background-image: url(images/icon-facebook.png);
 }
 
 .site-footer .social-media .twitter {
-	background-image: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/07/ico-twitter-wht-nobrdr-96x96.png);
+	background-image: url(images/icon-twitter.png);
 }
 
 .site-footer .social-media .instagram {
-	background-image: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/07/ico-instagram-wht-nobrdr-96x96.png);
+	background-image: url(images/icon-instagram.png);
 }
 
 .site-footer .social-media .back-to-top {
-	background-image: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/06/arrow-up-wht.png);
+	background-image: url(images/arrow-up.png);
 	background-size: 16px;
 }
 
