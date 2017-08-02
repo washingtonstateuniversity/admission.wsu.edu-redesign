@@ -140,7 +140,7 @@ class WSUWP_New_JSON_Web_Template {
 		$post = get_post();
 
 		$pre = $this->build_pre_content();
-		$post = $this->build_post_content( $post->post_name );
+		$post = $this->build_post_content();
 
 		header( 'HTTP/1.1 200 OK' );
 		header( 'Content-Type: application/json' );
@@ -173,10 +173,15 @@ class WSUWP_New_JSON_Web_Template {
 	 *
 	 * @return string HTML content.
 	 */
-	private function build_post_content( $post_slug ) {
+	private function build_post_content() {
 		ob_start();
 
-		get_template_part( 'web-template-post', $post_slug );
+		get_template_part( 'parts/footers' );
+
+		?>
+		</main>
+		<?php
+
 		get_footer();
 
 		$content = ob_get_clean();
