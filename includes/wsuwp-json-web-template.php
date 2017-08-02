@@ -139,7 +139,7 @@ class WSUWP_New_JSON_Web_Template {
 
 		$post = get_post();
 
-		$pre = $this->build_pre_content( $post->post_name );
+		$pre = $this->build_pre_content();
 		$post = $this->build_post_content( $post->post_name );
 
 		header( 'HTTP/1.1 200 OK' );
@@ -156,12 +156,12 @@ class WSUWP_New_JSON_Web_Template {
 	 *
 	 * @return string HTML content.
 	 */
-	private function build_pre_content( $post_slug ) {
+	private function build_pre_content() {
 		ob_start();
 
 		get_header();
 
-		get_template_part( 'web-template-pre', $post_slug );
+		get_template_part( 'parts/headers' );
 
 		$content = ob_get_clean();
 

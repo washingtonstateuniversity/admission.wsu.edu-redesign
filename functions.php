@@ -175,6 +175,8 @@ class WSU_Admission_Theme {
 		} elseif ( is_404() ) {
 			$main_header_elements['sub_header_default'] = '404';
 			$main_header_elements['page_tagline'] = 'Page Not Found';
+		} elseif ( is_singular( 'json_web_template' ) ) {
+			$main_header_elements['page_tagline'] = get_post_meta( get_the_ID(), '_wsuwp_web_app_subhead', true );
 		}
 
 		if ( ! isset( $main_header_elements['page_tagline'] ) ) {
