@@ -166,12 +166,14 @@
 
 .depth-2 .main-header,
 .depth-3 .main-header,
-.archive .main-header {
+.archive .main-header,
+.page.medium-header .main-header {
 	height: 350px;
 }
 
 .depth-1 .main-header,
-.single-json_web_template .main-header {
+.single-json_web_template .main-header,
+.page.large-header .main-header {
 	height: 450px;
 }
 
