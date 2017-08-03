@@ -164,17 +164,12 @@
 	height: 0;
 }
 
-.depth-2 .main-header,
-.depth-3 .main-header,
-.archive .main-header,
-.page.medium-header .main-header {
-	height: 350px;
+.page.has-featured-image .main-header {
+	height: 450px;
 }
 
-.depth-1 .main-header,
-.single-json_web_template .main-header,
-.page.large-header .main-header {
-	height: 450px;
+.page.has-featured-image.small-header .main-header {
+	height: 250px;
 }
 
 .main-header:before {
