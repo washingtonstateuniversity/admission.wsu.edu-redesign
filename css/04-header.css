@@ -1,30 +1,27 @@
-.has-featured-image .main-header,
-.archive .main-header,
-.single-post .main-header,
-.error404 .main-header {
+.main-header {
 	background-color: #262626;
 	background-position: center center;
+	background-repeat: no-repeat;
 	background-size: cover;
 	box-sizing: border-box;
 	height: 250px;
 	position: relative;
-	top: auto;
+	z-index: 2;
 }
 
-.has-featured-image.depth-3 .main-header,
-.archive .main-header {
-	height: 350px;
+.home .main-header {
+	height: 0;
 }
 
-.has-featured-image.depth-2 .main-header,
-.has-featured-image.depth-1 .main-header {
+.page.has-featured-image .main-header {
 	height: 450px;
 }
 
-.has-featured-image .main-header:before,
-.archive .main-header:before,
-.single-post .main-header:before,
-.error404 .main-header:before {
+.page.has-featured-image.small-header .main-header {
+	height: 250px;
+}
+
+.main-header:before {
 	background: linear-gradient(to right, #820c23 0%, #a60f2d 100%);
 	content: "";
 	height: 4px;
@@ -35,7 +32,7 @@
 }
 
 .main-header .pillar {
-	background: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/06/img-cougar-pillar-200x320.png) no-repeat center bottom #a31d36;
+	background: url(images/pillar-spirit-mark.png) no-repeat center bottom #a31d36;
 	background-size: 80px;
 	border: none;
 	height: 128px;
@@ -79,12 +76,30 @@
 	padding-right: 38px;
 }
 
-.has-featured-image .main-header .header-group,
-.archive .main-header .header-group,
-.single-post .main-header .header-group,
-.error404 .main-header .header-group {
-	padding: .1rem 2rem !important;
-	position: relative !important;
+.main-header .header-group {
+	padding: .1rem 2rem;
+	position: relative;
+}
+
+.main-header sup,
+.main-header sub {
+	display: inline-block;
+	font-size: 12px;
+	letter-spacing: 2px;
+}
+
+.main-header sup {
+	font-weight: 800;
+}
+
+.sub-header span {
+	font-weight: 300;
+	margin-left: 2px;
+	text-transform: uppercase;
+}
+
+.sup-header-default:after {
+	content: " Admissions";
 }
 
 .main-header .header-bottom {
@@ -93,15 +108,16 @@
 	position: absolute;
 }
 
+.home .sub-header-default {
+	display: none;
+}
+
 .main-header .header-bottom h1 {
 	animation: fadein 2s;
 	color: #fff;
 }
 
-.has-featured-image .main-header:after,
-.archive .main-header:after,
-.single-post .main-header:after,
-.error404 .main-header:after {
+.main-header:after {
 	background: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 0) 50%);
 	content: "";
 	height: 100%;

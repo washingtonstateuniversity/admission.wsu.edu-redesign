@@ -15,7 +15,11 @@ class WSU_Admission_Theme {
 	 */
 	public $version = '0.0.10';
 
+	/**
+	 * Start things up.
+	 */
 	public function __construct() {
+		add_filter( 'spine_child_theme_version', array( $this, 'theme_version' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_filter( 'theme_page_templates', array( $this, 'prune_page_templates' ) );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'allow_download_attribute' ), 10 );
@@ -26,6 +30,17 @@ class WSU_Admission_Theme {
 		add_action( 'init', array( $this, 'register_footer_menu' ) );
 		add_filter( 'nav_menu_css_class', array( $this, 'footer_menu_classes' ), 10, 3 );
 		add_filter( 'nav_menu_item_id', array( $this, 'footer_menu_item_ids' ), 10, 3 );
+	}
+
+	/**
+	 * Provide a theme version for use in cache busting.
+	 *
+	 * @since 0.0.11
+	 *
+	 * @return string
+	 */
+	public function theme_version() {
+		return $this->version;
 	}
 
 	/**
@@ -175,6 +190,8 @@ class WSU_Admission_Theme {
 		} elseif ( is_404() ) {
 			$main_header_elements['sub_header_default'] = '404';
 			$main_header_elements['page_tagline'] = 'Page Not Found';
+		} elseif ( is_singular( 'json_web_template' ) ) {
+			$main_header_elements['page_tagline'] = get_post_meta( get_the_ID(), '_wsuwp_web_app_subhead', true );
 		}
 
 		if ( ! isset( $main_header_elements['page_tagline'] ) ) {

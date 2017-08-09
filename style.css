@@ -135,111 +135,6 @@
 	}
 }
 
-/* Lazy text scroll */
-.home .lazy-text-bounds {
-	overflow: hidden;
-	padding-bottom: 3rem;
-}
-
-.home .lazy-text-bounds .column.two {
-	padding: 0;
-}
-
-.home .column ul.lazy-text-scroll {
-	box-sizing: border-box;
-	margin-left: 45%;
-	padding: 3rem 0 2rem;
-	position: absolute;
-	text-align: center;
-	width: 100%;
-}
-
-.home .column ul.lazy-text-scroll li {
-	color: #e5e5e5;
-	font-size: 2em;
-	position: relative;
-}
-
-.home .lazy-text-scroll li:first-of-type {
-	-webkit-transform: translateY(-48px);
-	    -ms-transform: translateY(-48px);
-	        transform: translateY(-48px);
-}
-
-.home .lazy-text-scroll li:nth-of-type(2) {
-	margin-left: 20px;
-	-webkit-transform: translateY(-83px);
-	    -ms-transform: translateY(-83px);
-	        transform: translateY(-83px);
-}
-
-.home .lazy-text-scroll li:last-of-type {
-	margin-left: -250px;
-	-webkit-transform: translateY(-124px);
-	    -ms-transform: translateY(-124px);
-	        transform: translateY(-124px);
-}
-
-@media screen and ( max-width: 791px ) {
-
-	.home .column ul.lazy-text-scroll li {
-		font-size: 1.5em;
-	}
-
-	.home .lazy-text-scroll li:first-of-type {
-		-webkit-transform: translateY(-37px);
-		    -ms-transform: translateY(-37px);
-		        transform: translateY(-37px);
-	}
-
-	.home .lazy-text-scroll li:nth-of-type(2) {
-		-webkit-transform: translateY(-67px);
-		    -ms-transform: translateY(-67px);
-		        transform: translateY(-67px);
-	}
-
-	.home .lazy-text-scroll li:last-of-type {
-		margin-left: -214px;
-		-webkit-transform: translateY(-104px);
-		    -ms-transform: translateY(-104px);
-		        transform: translateY(-104px);
-	}
-}
-
-@media screen and ( max-width: 693px ) {
-
-	.home .column ul.lazy-text-scroll {
-		left: 0;
-		margin-left: 0;
-		padding-top: 0;
-	}
-
-	.home .column ul.lazy-text-scroll li {
-		font-size: 1.2em;
-	}
-
-	.home .lazy-text-scroll li:first-of-type {
-		margin-left: 15px;
-		-webkit-transform: translateY(26px);
-		    -ms-transform: translateY(26px);
-		        transform: translateY(26px);
-	}
-
-	.home .lazy-text-scroll li:nth-of-type(2) {
-		margin-left: 30px;
-		-webkit-transform: translateY(-2px);
-		    -ms-transform: translateY(-2px);
-		        transform: translateY(-2px);
-	}
-
-	.home .lazy-text-scroll li:last-of-type {
-		margin-left: 0;
-		-webkit-transform: translateY(-32px);
-		    -ms-transform: translateY(-32px);
-		        transform: translateY(-32px);
-	}
-}
-
 /* Buttons */
 .home .announcements {
 	overflow: hidden;
@@ -254,33 +149,30 @@
 	transition: opacity .5s ease .1s;
 }
 
-.has-featured-image .main-header,
-.archive .main-header,
-.single-post .main-header,
-.error404 .main-header {
+.main-header {
 	background-color: #262626;
 	background-position: center center;
+	background-repeat: no-repeat;
 	background-size: cover;
 	box-sizing: border-box;
 	height: 250px;
 	position: relative;
-	top: auto;
+	z-index: 2;
 }
 
-.has-featured-image.depth-3 .main-header,
-.archive .main-header {
-	height: 350px;
+.home .main-header {
+	height: 0;
 }
 
-.has-featured-image.depth-2 .main-header,
-.has-featured-image.depth-1 .main-header {
+.page.has-featured-image .main-header {
 	height: 450px;
 }
 
-.has-featured-image .main-header:before,
-.archive .main-header:before,
-.single-post .main-header:before,
-.error404 .main-header:before {
+.page.has-featured-image.small-header .main-header {
+	height: 250px;
+}
+
+.main-header:before {
 	background: linear-gradient(to right, #820c23 0%, #a60f2d 100%);
 	content: "";
 	height: 4px;
@@ -291,7 +183,7 @@
 }
 
 .main-header .pillar {
-	background: url(https://stage.admission.wsu.edu/wp-content/uploads/sites/1621/2017/06/img-cougar-pillar-200x320.png) no-repeat center bottom #a31d36;
+	background: url(images/pillar-spirit-mark.png) no-repeat center bottom #a31d36;
 	background-size: 80px;
 	border: none;
 	height: 128px;
@@ -335,12 +227,30 @@
 	padding-right: 38px;
 }
 
-.has-featured-image .main-header .header-group,
-.archive .main-header .header-group,
-.single-post .main-header .header-group,
-.error404 .main-header .header-group {
-	padding: .1rem 2rem !important;
-	position: relative !important;
+.main-header .header-group {
+	padding: .1rem 2rem;
+	position: relative;
+}
+
+.main-header sup,
+.main-header sub {
+	display: inline-block;
+	font-size: 12px;
+	letter-spacing: 2px;
+}
+
+.main-header sup {
+	font-weight: 800;
+}
+
+.sub-header span {
+	font-weight: 300;
+	margin-left: 2px;
+	text-transform: uppercase;
+}
+
+.sup-header-default:after {
+	content: " Admissions";
 }
 
 .main-header .header-bottom {
@@ -349,16 +259,17 @@
 	position: absolute;
 }
 
+.home .sub-header-default {
+	display: none;
+}
+
 .main-header .header-bottom h1 {
 	-webkit-animation: fadein 2s;
 	        animation: fadein 2s;
 	color: #fff;
 }
 
-.has-featured-image .main-header:after,
-.archive .main-header:after,
-.single-post .main-header:after,
-.error404 .main-header:after {
+.main-header:after {
 	background: linear-gradient(135deg, rgba(39, 156, 198, 1) 0%, rgba(125, 185, 232, 0) 50%);
 	content: "";
 	height: 100%;
