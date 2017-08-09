@@ -161,6 +161,10 @@ class WSUWP_New_JSON_Web_Template {
 
 		get_header();
 
+		?>
+		<main class="app-web-template">
+		<?php
+
 		get_template_part( 'parts/headers' );
 
 		$content = ob_get_clean();
