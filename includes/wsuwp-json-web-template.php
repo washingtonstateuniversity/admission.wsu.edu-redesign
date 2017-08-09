@@ -190,7 +190,7 @@ class WSUWP_New_JSON_Web_Template {
 	}
 
 	/**
-	 * Filter list item classes to add current and dogeared when default nav menus are in use.
+	 * Filter list item classes to add active when default nav menus are in use.
 	 *
 	 * @param array    $classes
 	 * @param WP_Post  $item
@@ -199,16 +199,15 @@ class WSUWP_New_JSON_Web_Template {
 	 * @return array
 	 */
 	public function set_current_menu_class( $classes, $item, $args ) {
-		if ( is_singular( $this->content_type ) && 'site' === $args-> menu && $this->application_url === $item->url ) {
-			$classes[] = 'current';
-			$classes[] = 'dogeared';
+		if ( is_singular( $this->content_type ) && 'site' === $args->menu && $this->application_url === $item->url ) {
+			$classes[] = 'active';
 		}
 
 		return $classes;
 	}
 
 	/**
-	 * Filter the list item classes to manually add current and dogeared when necessary.
+	 * Filter the list item classes to manually add active when necessary.
 	 *
 	 * @param array   $item_classes List of classes assigned to the list item.
 	 * @param WP_Post $page         Post object for the current page.
@@ -217,8 +216,7 @@ class WSUWP_New_JSON_Web_Template {
 	 */
 	public function bu_navigation_filter_item_attrs( $item_classes, $page ) {
 		if ( is_singular( $this->content_type ) && $this->application_url === $page->url ) {
-			$item_classes[] = 'current';
-			$item_classes[] = 'dogeared';
+			$item_classes[] = 'active';
 		}
 
 		return $item_classes;
