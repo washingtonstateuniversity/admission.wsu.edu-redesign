@@ -21,6 +21,7 @@ class WSU_Admission_Theme {
 	public function __construct() {
 		add_filter( 'spine_child_theme_version', array( $this, 'theme_version' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_web_template_scripts' ), 99 );
 		add_filter( 'theme_page_templates', array( $this, 'prune_page_templates' ) );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'allow_download_attribute' ), 10 );
 		add_action( 'wp_footer', array( $this, 'carnegie_tracking_tags' ), 101 );
@@ -60,9 +61,14 @@ class WSU_Admission_Theme {
 		if ( is_front_page() ) {
 			wp_enqueue_script( 'home', get_stylesheet_directory_uri() . '/js/home.min.js', array( 'jquery' ), $this->version, true );
 		}
+	}
 
+	/**
+	 * Enqueue scripts specific to the web templates.
+	 */
+	public function enqueue_web_template_scripts() {
 		if ( is_singular( 'json_web_template' ) && is_single( 'campus-tours' ) ) {
-			wp_enqueue_style( 'campus-tours', 'https://admission.wsu.edu/visits/individual/css/individual.css', array( 'spine-theme', 'spine-theme-child' ), null );
+			wp_enqueue_style( 'campus-tours', 'https://admission.wsu.edu/visits/individual/css/individual.css', null, null );
 		}
 	}
 
