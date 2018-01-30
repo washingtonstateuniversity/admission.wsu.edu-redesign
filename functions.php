@@ -62,7 +62,7 @@ class WSU_Admission_Theme {
 		}
 
 		if ( is_singular( 'json_web_template' ) && is_single( 'campus-tours' ) ) {
-			wp_enqueue_style( 'campus-tours', 'https://admission.wsu.edu/visits/individual/css/individual.css', array( 'spine-theme', 'spine-theme-child' ), $this->version );
+			wp_enqueue_style( 'campus-tours', 'https://admission.wsu.edu/visits/individual/css/individual.css', array( 'spine-theme', 'spine-theme-child' ), null );
 		}
 	}
 
