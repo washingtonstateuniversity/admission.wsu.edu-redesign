@@ -13,7 +13,7 @@ class WSU_Admission_Theme {
 	/**
 	 * @var string The version of the WSU Admission theme for cache breaking.
 	 */
-	public $version = '0.0.12';
+	public $version = '0.0.13';
 
 	/**
 	 * Start things up.
@@ -59,6 +59,10 @@ class WSU_Admission_Theme {
 
 		if ( is_front_page() ) {
 			wp_enqueue_script( 'home', get_stylesheet_directory_uri() . '/js/home.min.js', array( 'jquery' ), $this->version, true );
+		}
+
+		if ( is_singular( 'json_web_template' ) && is_single( 'campus-tours' ) ) {
+			wp_enqueue_style( 'campus-tours', 'https://admission.wsu.edu/visits/individual/css/individual.css', array( 'spine-theme', 'spine-theme-child' ), $this->version );
 		}
 	}
 
