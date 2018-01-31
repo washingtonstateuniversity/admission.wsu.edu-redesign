@@ -13,7 +13,7 @@ class WSU_Admission_Theme {
 	/**
 	 * @var string The version of the WSU Admission theme for cache breaking.
 	 */
-	public $version = '0.0.14';
+	public $version = '0.0.15';
 
 	/**
 	 * Start things up.
