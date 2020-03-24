@@ -5,8 +5,11 @@
  Author:         WSU University Communications
  Author URI:     https://web.wsu.edu
  Template:       spine
- Version:        0.0.15
+ Version:        1.0.0
 */
+
+/* Import WSU icon set */
+@import url('https://cdn-web-wsu.s3-us-west-2.amazonaws.com/designsystem/1.x/wsu-icons/dist/wsu-icons.bundle.css');
 
 /**
  * @license
