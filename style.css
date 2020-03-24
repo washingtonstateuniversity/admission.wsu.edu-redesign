@@ -8,6 +8,9 @@
  Version:        0.0.15
 */
 
+/* Import WSU icon set */
+@import url('https://cdn-web-wsu.s3-us-west-2.amazonaws.com/designsystem/1.x/wsu-icons/dist/wsu-icons.bundle.css');
+
 /**
  * @license
  * MyFonts Webfont Build ID 3227938, 2016-06-03T12:42:07-0400
